@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1>UPLOAD FILE HERE</h1>
+     
+    {% if name %}
+        <h2>you are logged in as {{name}}. <a href="/logout">logout</a></h2>
+    
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Name" >
+            <input type="file" name="pdf">
+            <button type="submit">Upload</button>
+        </form>
+    {% else %}
+        <h4>You are logged out. <a href="/login">Login</a></h4>
+    {% endif %}
+
+{% endblock %}
+
